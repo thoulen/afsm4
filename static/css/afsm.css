@@ -1,0 +1,158 @@
+#header {
+	background: url('../images/header.png');
+	color: #FFFFFF;
+ }
+.title {
+	font-size : 20px;
+	font-weight : bold;
+	font-style : italic;
+	font-family : DejaVu;
+	text-shadow:5px 5px 5px #FFFFFF;
+	color : #000000 ;
+}
+
+.leaf-selected {
+	color : #000 !important;			/* Colore del font */
+	font-weight : bold !important;		/* Peso del font */
+	/* background-color: red !important;	 */
+}
+
+.icon-add {
+	background-size: 16px !important;
+    background-image: url('../images/ico/add.png') !important;
+}
+
+.icon-del {
+	background-size: 16px !important;
+    background-image: url('../images/ico/delete.png') !important;
+}
+
+.icon-edit {
+	background-size: 16px !important;
+    background-image: url('../images/ico/edit.png') !important;
+}
+
+.icon-logs {
+	background-size: 16px !important;
+    background-image: url('../images/ico/logs.png') !important; 
+}
+
+.icon-csv {
+	background-size: 16px !important;
+    background-image: url('../images/ico/csv.png') !important; 
+}
+
+.icon-search {
+	background-size: 16px !important;
+    background-image: url('../images/ico/search.png') !important; 
+}
+
+.icon-reset {
+	background-size: 16px !important;
+    background-image: url('../images/ico/refresh.png') !important; 
+}
+
+.icon-root {
+	background-size: 16px !important;
+    background-image: url('../images/ico/folder-root.png') !important;
+}
+
+.icon-pts{
+	background-size: 16px !important;
+    background-image: url('../images/ico/pts_small.png') !important;
+}
+
+.icon-volumes {
+	background-size: 16px !important;
+    background-image: url('../images/ico/volume_small.png') !important;
+}
+
+.icon-servers {
+	background-size: 16px !important;
+    background-image: url('../images/ico/server_small.png') !important;
+}
+
+.icon-partitions {
+	background-size: 16px !important;
+    background-image: url('../images/ico/partition_small.png') !important;
+}
+
+.icon-cells {
+	background-size: 16px !important;
+    background-image: url('../images/ico/cell_small.png') !important;
+}
+
+.icon-users {
+	background-size: 16px !important;
+    background-image: url('../images/ico/users_small.png') !important;
+}
+
+.icon-groups {
+	background-size: 16px !important;
+    background-image: url('../images/ico/groups_small.png') !important;
+}
+
+.icon-admin {
+	background-size: 16px !important;
+    background-image: url('../images/ico/admin_small.png') !important;
+}
+
+#image-link {
+	-webkit-transform: scale(1);
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 300ms;
+	-moz-transform: scale(1);
+	-moz-transition-timing-function: ease-out;
+	-moz-transition-duration: 300ms;
+}
+
+#image-link:hover {
+	-webkit-transform: scale(1.5);
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 300ms;
+	-moz-transform: scale(1.5);
+	-moz-transition-timing-function: ease-out;
+	-moz-transition-duration: 300ms;
+}
+
+.table { 
+	position: relative;
+	margin: 15% auto 0 auto;
+	padding: 10px;
+	-webkit-animation-duration: 400ms;
+	-moz-animation-duration: 400ms;
+	-webkit-animation-name: pop;
+	-moz-animation-name: pop;
+	-webkit-animation-timing-function: ease-in-out;
+	-moz-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes pop {  
+	0% {
+		-webkit-transform: scale3d(0.5, 0.5, 1); opacity: 0;
+	}
+	45% {
+		-webkit-transform: scale3d(1.12, 1.12, 1);
+	}
+
+	80% {
+		-webkit-transform: scale3d(0.9, 0.9, 1);opacity: 1;
+	}
+	100% { 
+		-webkit-transform: scale3d(1, 1, 1);opacity: 1;
+	}
+}
+
+@-moz-keyframes pop {  
+	from {
+		-moz-transform: scale(.1);
+		opacity: 0;
+	}
+	85% {
+		-moz-transform: scale(1.05);
+		opacity: 1;
+	}
+	to { 
+		-moz-transform: scale(1);
+	}
+}

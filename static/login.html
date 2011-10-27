@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>Smart Test Console Login</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="lib/resources/css/ext-all.css" />
+   
+ 	<!-- LIBS -->
+	<script type="text/javascript" src="lib/bootstrap.js"></script> <!-- load ext-all.js if not in dev mode !-->
+	<script type="text/javascript" src="js/conf.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<style type="text/css">
+		.hello {
+		
+			font-size : 40px;
+			font-weight : bold;
+			font-style : italic;
+			font-family : DejaVu;
+		}
+		
+		body { 
+			background-image:url('images/tile.png');
+			-webkit-animation-name: pop;
+			-webkit-animation-duration: .5s;
+			-webkit-animation-iteration-count: 1;
+			-webkit-animation-timing-function: ease-in;
+			-moz-animation-name: pop;
+			-moz-animation-duration: .5s;
+			-moz-animation-iteration-count: 1;
+			-moz-animation-timing-function: ease-in;
+		}
+		@-webkit-keyframes pop {  
+			from {
+				-webkit-transform: scale(.1);
+				opacity: 0;
+			}
+			85% {
+				-webkit-transform: scale(1.05);
+				opacity: 1;
+			}
+			to { 
+				-webkit-transform: scale(1);
+			}
+		}
+
+		@-moz-keyframes pop {  
+			from {
+				-moz-transform: scale(.1);
+				opacity: 0;
+			}
+			85% {
+				-moz-transform: scale(1.05);
+				opacity: 1;
+			}
+			to { 
+				-moz-transform: scale(1);
+			}
+		}
+	</style>	
+	</head>
+	<body >
+	
+	<table border="0" width="100%" align="center">
+		<tr>
+			<td align="center">
+				<img src="images/separator.png" height="50" alt="separator"/>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+				<img src="images/logoFW.png" width="30%" alt="Fastweb"/>
+			</td>
+		</tr>
+		<tr>
+			<td align="center">
+			<p class="hello">Smart Test Console</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br />
+				<br />
+				<br />
+			<div align="center" id="loginForm"></div>
+			</td>
+		</tr>
+	</table>
+	
+	</body>
+</html>
