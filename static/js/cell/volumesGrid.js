@@ -6,92 +6,6 @@ Ext.define('Ext.cell.volumesGrid', {
     viewConfig: {
         stripeRows: true
     },
-    store: Ext.create('Ext.data.Store', {
-        id: 'volumesStore',
-        model: Ext.define('volumesModel', {
-            extend: 'Ext.data.Model',
-            fields: [{
-                name: 'vid'
-            }, {
-                name: 'name'
-            }, {
-                name: 'serv'
-            }, {
-                name: 'part'
-            }, {
-                name: 'parentID'
-            }, {
-                name: 'backupID'
-            }, {
-                name: 'cloneID'
-            }, {
-                name: 'inUse'
-            }, {
-                name: 'needsSalvaged'
-            }, {
-                name: 'destroyMe'
-            }, {
-                name: 'type'
-            }, {
-                name: 'creationDate',
-                type: 'date',
-                dateFormat: 'Y-m-d H:i:s' // 1970-01-01 01:00:00
-            }, {
-                name: 'updateDate',
-                type: 'date',
-                dateFormat: 'Y-m-d H:i:s' // 1970-01-01 01:00:00
-            }, {
-                name: 'backupDate',
-                type: 'date',
-                dateFormat: 'Y-m-d H:i:s' // 1970-01-01 01:00:00
-            }, {
-                name: 'copyDate',
-                type: 'date',
-                dateFormat: 'Y-m-d H:i:s' // 1970-01-01 01:00:00
-            }, {
-                name: 'flags'
-            }, {
-                name: 'diskused'
-            }, {
-                name: 'maxquota'
-            }, {
-                name: 'minquota'
-            }, {
-                name: 'status'
-            }, {
-                name: 'filecount'
-            }, {
-                name: 'dayUse'
-            }, {
-                name: 'weekUse'
-            }, {
-                name: 'spare2'
-            }, {
-                name: 'spare3'
-            }, {
-                name: 'cdate',
-                type: 'date',
-                dateFormat: 'Y-m-d H:i:s' // 1970-01-01 01:00:00
-            }, {
-                name: 'udate',
-                type: 'date',
-                dateFormat: 'Y-m-d H:i:s' // 1970-01-01 01:00:00
-            }, {
-                name: 'sync'
-            }]
-        }),
-        autoLoad: false,
-        remoteSort: true,
-        proxy: {
-            type: 'rest',
-            url: URL_PREFIX + '/cell/volume/',
-            reader: {
-                type: 'json',
-                root: 'data',
-                totalProperty: 'totalCount'
-            }
-        }
-    }),
     initComponent: function () {
         if (!Ext.ModelManager.isRegistered('comboBoxModel')) {
             Ext.define('comboBoxModel', {
@@ -105,27 +19,116 @@ Ext.define('Ext.cell.volumesGrid', {
                 }]
             });
         }
+		var volStore = Ext.create('Ext.data.Store', {
+	        id: 'volumesStore',
+	        model: Ext.define('volumesModel', {
+	            extend: 'Ext.data.Model',
+	            fields: [{
+	                name: 'vid'
+	            }, {
+	                name: 'name'
+	            }, {
+	                name: 'serv'
+	            }, {
+	                name: 'part'
+	            }, {
+	                name: 'parentID'
+	            }, {
+	                name: 'backupID'
+	            }, {
+	                name: 'cloneID'
+	            }, {
+	                name: 'inUse'
+	            }, {
+	                name: 'needsSalvaged'
+	            }, {
+	                name: 'destroyMe'
+	            }, {
+	                name: 'type'
+	            }, {
+	                name: 'creationDate',
+	                type: 'date',
+	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+	            }, {
+	                name: 'updateDate',
+	                type: 'date',
+	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+	            }, {
+	                name: 'backupDate',
+	                type: 'date',
+	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+	            }, {
+	                name: 'copyDate',
+	                type: 'date',
+	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+	            }, {
+	                name: 'flags'
+	            }, {
+	                name: 'diskused'
+	            }, {
+	                name: 'maxquota'
+	            }, {
+	                name: 'minquota'
+	            }, {
+	                name: 'status'
+	            }, {
+	                name: 'filecount'
+	            }, {
+	                name: 'dayUse'
+	            }, {
+	                name: 'weekUse'
+	            }, {
+	                name: 'spare2'
+	            }, {
+	                name: 'spare3'
+	            }, {
+	                name: 'cdate',
+	                type: 'date',
+	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+	            }, {
+	                name: 'udate',
+	                type: 'date',
+	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+	            }, {
+	                name: 'sync'
+	            }]
+	        }),
+	        autoLoad: false,
+	        remoteSort: true,
+	        proxy: {
+	            type: 'rest',
+	            url: URL_PREFIX + '/cell/volume/',
+	            reader: {
+	                type: 'json',
+	                root: 'data',
+	                totalProperty: 'totalCount'
+	            }
+	        }
+	    });
+
+
         Ext.apply(this, {
+			store: volStore,
             columns: [{
                 text: 'ID',
                 dataIndex: 'vid',
                 sortable: true,
-                flex: 1
+                flex: 2
             }, {
                 text: 'Volume Name',
                 dataIndex: 'name',
                 sortable: true,
-                flex: 1
+                flex: 2
             }, {
                 text: 'Server',
                 dataIndex: 'serv',
                 sortable: true,
-                flex: 1
+                flex: 2
             }, {
-                text: 'Partition',
+                text: 'Part',
                 dataIndex: 'part',
                 sortable: true,
-                flex: 1
+				width: 50
             }, {
                 text: 'parentID',
                 dataIndex: 'parentID',
@@ -148,7 +151,7 @@ Ext.define('Ext.cell.volumesGrid', {
                 text: 'In Use',
                 dataIndex: 'inUse',
                 sortable: true,
-                flex: 1
+				width: 50
             }, {
                 text: 'Need Salvaged',
                 dataIndex: 'needsSalvaged',
@@ -170,18 +173,21 @@ Ext.define('Ext.cell.volumesGrid', {
                 dataIndex: 'creationDate',
                 sortable: true,
                 flex: 1,
+				hidden: true,
                 renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')
             }, {
                 text: 'updateDate',
                 dataIndex: 'updateDate',
                 sortable: true,
                 flex: 1,
+				hidden: true,
                 renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')
             }, {
                 text: 'backupDate',
                 dataIndex: 'backupDate',
                 sortable: true,
                 flex: 1,
+				hidden: true,
                 renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')
             }, {
                 text: 'copyDate',
@@ -189,6 +195,7 @@ Ext.define('Ext.cell.volumesGrid', {
                 sortable: true,
                 hidden: true , 
                 flex: 1,
+				hidden: true,
                 renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')
             }, {
                 text: 'flags',
@@ -200,7 +207,8 @@ Ext.define('Ext.cell.volumesGrid', {
                 text: 'diskused',
                 dataIndex: 'diskused',
                 sortable: true,
-                flex: 1
+                flex: 2,
+				renderer: this.diskUsedPB
             }, {
                 text: 'maxquota',
                 dataIndex: 'maxquota',
@@ -238,7 +246,7 @@ Ext.define('Ext.cell.volumesGrid', {
                 sortable: true,
                 hidden: true ,
                 flex: 1
-            }, {
+            },  { // Da qui in poi....
                 text: 'spare3',
                 dataIndex: 'spare3',
                 sortable: true,
@@ -281,8 +289,20 @@ Ext.define('Ext.cell.volumesGrid', {
                     scope: this,
                     handler: function () {
                         var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
-                        if (m.length > 0) {
-                            this.volumesEdit(m[0]);
+                        if (m.length != 0) {
+							Ext.Msg.show({
+			                    title: 'Edit',
+			                    msg: "Are you sure you want to <b>edit</b> the volume <b>"+m[0].data['name']+"</b>?",
+			                    buttons: Ext.Msg.YESNO,
+			                    scope: this,
+			                    fn: function (btw) {
+			                        if (btw == 'yes') {
+			                             this.volumesEdit(m[0]);
+			                        }
+			                    },
+			                    icon: Ext.MessageBox.QUESTION,
+			                    minWidth: 270
+			                });
                         } else {
                             Ext.Msg.alert('Error', 'You must select one volume to edit!');
                         }
@@ -294,7 +314,19 @@ Ext.define('Ext.cell.volumesGrid', {
                     handler: function () {
                         var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
                         if (m.length > 0) {
-                            this.volumesDelete(m[0]);
+							Ext.Msg.show({
+			                    title: 'Delete',
+			                    msg: "Are you sure you want to <b>delete</b> the volume <b>"+m[0].data['name']+"</b>?",
+			                    buttons: Ext.Msg.YESNO,
+			                    scope: this,
+			                    fn: function (btw) {
+			                        if (btw == 'yes') {
+			                             this.volumesDelete(m[0]);
+			                        }
+			                    },
+			                    icon: Ext.MessageBox.QUESTION,
+			                    minWidth: 270
+			                });
                         } else {
                             Ext.Msg.alert('Error', 'You must select one volume to delete!');
                         }
@@ -308,7 +340,6 @@ Ext.define('Ext.cell.volumesGrid', {
                     handler: function () {
                         var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
                         if (m.length > 0) {
-                            //this.volumesDelete(m[0]);
                             Ext.Msg.alert('Demo', 'Moving volume ' + m[0].data['name'] + ' <br>(DEMO)');
                         } else {
                             Ext.Msg.alert('Error', 'You must select one volume to move!');
@@ -323,7 +354,6 @@ Ext.define('Ext.cell.volumesGrid', {
 	                    handler: function () {
 	                        var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
 	                        if (m.length > 0) {
-	                            //this.volumesDelete(m[0]);
 	                            Ext.Msg.alert('Demo', 'Releasing volume ' + m[0].data['name'] + ' <br>(DEMO)');
 	                        } else {
 	                            Ext.Msg.alert('Error', 'You must select one volume to release!');
@@ -338,7 +368,6 @@ Ext.define('Ext.cell.volumesGrid', {
 		                    handler: function () {
 		                        var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
 		                        if (m.length > 0) {
-		                            //this.volumesDelete(m[0]);
 		                            Ext.Msg.alert('Demo', 'Cloning volume ' + m[0].data['name'] + ' <br>(DEMO)');
 		                        } else {
 		                            Ext.Msg.alert('Error', 'You must select one volume to clone!');
@@ -415,7 +444,7 @@ Ext.define('Ext.cell.volumesGrid', {
             }],
             bbar: Ext.create('Ext.PagingToolbar', {
                 id: 'volumesPaging',
-                store: this.store,
+                store: volStore,
                 displayInfo: true,
                 displayMsg: 'Displaying log {0} - {1} of {2}',
                 emptyMsg: 'No log to display'
@@ -429,6 +458,18 @@ Ext.define('Ext.cell.volumesGrid', {
     getId: function () {
         return this.id;
     },
+	diskUsedPB: function (cellValue, css_class, row){
+			var id = Ext.id();
+			
+			Ext.Function.defer(function(){
+				var percentage = Ext.util.Format.numberRenderer('0.000')((cellValue*100)/row.data['maxquota']);				
+				var pBar = Ext.create('Ext.ProgressBar', { renderTo: id });
+				pBar.updateProgress(percentage/100, percentage+'%');
+			}, 25);
+			
+			return '<div id="' + id + '"></di>';
+			
+	},
     csv_export: function(){
 		var this_url = Ext.getCmp('Volumes').store.getProxy().url;
 		location.href = this_url+"?output=csv";
@@ -713,82 +754,7 @@ Ext.define('Ext.cell.volumesGrid', {
     volumesEdit: function (row) {
         var vedit_id = Ext.id();
 
-        var veditPartCombo = Ext.create('Ext.form.field.ComboBox', {
-            fieldLabel: 'Partition',
-            name: 'part',
-            id: 'vedit-partCombo' + vedit_id,
-            store: Ext.create('Ext.data.Store', {
-                model: 'comboBoxModel',
-                proxy: {
-                    type: 'rest',
-                    url: URL_PREFIX + '/menu/volume/',
-                    reader: {
-                        type: 'json',
-                        root: 'data'
-                    }
-                },
-                autoLoad: false
-            }),
-            displayField: 'name',
-            valueField: 'id',
-            anchor: '98%',
-            typeAhead: false,
-            triggerAction: 'all',
-            emptyText: 'Select...',
-            allowBlank: false,
-            selectOnFocus: true,
-            forceSelection: true,
-            editable: false,
-            value: row.data['part']
-        });
-
-        var veditSrvCombo = Ext.create('Ext.form.field.ComboBox', {
-            fieldLabel: 'Server',
-            name: 'serv',
-            id: 'vedit-serverCombo' + vedit_id,
-            store: Ext.create('Ext.data.Store', {
-                model: 'comboBoxModel',
-                proxy: {
-                    type: 'rest',
-                    url: URL_PREFIX + '/menu/volume/',
-                    reader: {
-                        type: 'json',
-                        root: 'data'
-                    }
-                },
-                autoLoad: false
-            }),
-            displayField: 'name',
-            valueField: 'id',
-            anchor: '98%',
-            typeAhead: false,
-            triggerAction: 'all',
-            emptyText: 'Select...',
-            allowBlank: false,
-            selectOnFocus: true,
-            forceSelection: true,
-            editable: false,
-            value: row.data['serv'],
-            listeners: {
-                change: function () {
-                    veditPartCombo.clearValue();
-                    if (this.getSubmitValue() != null) {
-                        veditPartCombo.store.setProxy({
-                            url: URL_PREFIX + '/menu/volume/' + this.getSubmitValue(),
-                            type: 'rest',
-                            reader: {
-                                type: 'json',
-                                root: 'data'
-                            }
-                        });
-                        veditPartCombo.enable();
-                        veditPartCombo.store.load();
-                    } else {
-                        veditPartCombo.setDisabled(true);
-                    }
-                }
-            }
-        });
+console.log(row.data['end_date']);
 
         var veditOwnerCombo = Ext.create('Ext.form.field.ComboBox', {
             fieldLabel: 'Owner',
@@ -864,9 +830,7 @@ Ext.define('Ext.cell.volumesGrid', {
                 anchor: '98%',
                 allowBlank: false,
                 value: row.data['name']
-            },
-            veditSrvCombo, veditPartCombo,
-            {
+            }, {
                 xtype: 'numberfield',
                 name: 'maxquota',
                 fieldLabel: 'Quota',
@@ -925,7 +889,7 @@ Ext.define('Ext.cell.volumesGrid', {
         });
 
         var editWindow = Ext.widget('window', {
-            title: 'Create new volume',
+            title: 'Edit '+row.data['name'],
             id: 'volumesEdit-win' + vedit_id,
             constrain: true,
             closable: true,
@@ -937,14 +901,6 @@ Ext.define('Ext.cell.volumesGrid', {
             items: editForm
         });
         editWindow.show();
-
-        veditPartCombo.store.on('load', function () {
-            veditPartCombo.setRawValue(veditPartCombo.getSubmitValue());
-        });
-
-        veditSrvCombo.store.on('load', function () {
-            veditSrvCombo.setRawValue(veditSrvCombo.getSubmitValue());
-        });
 
         veditOwnerCombo.store.on('load', function () {
             veditOwnerCombo.setRawValue(veditOwnerCombo.getSubmitValue());

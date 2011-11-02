@@ -14,7 +14,7 @@ import tornado.options
 import tornado.web
 import tornado.ioloop
 from afs.service.AuthService import TokenService
-from afs.model.AfsConfig import AfsConfig, setupDefaultConfig
+from afs.util.AfsConfig import AfsConfig, setupDefaultConfig
 from afsm.controller.BaseHandler import BaseHandler
 from afsm.controller.VolumeHandler import VolumeHandler
 
