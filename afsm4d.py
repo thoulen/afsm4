@@ -32,6 +32,7 @@ class AfsmApplication(tornado.web.Application):
         handlers = [
         (r"/", RootHandler),   
         (r"/rest/cell/volume/(.*)", VolumeHandler),
+		(r"/rest/menu/volume/(.*)", VolumeHandler), # Fake
         
         ]
         

@@ -19,96 +19,96 @@ Ext.define('Ext.cell.volumesGrid', {
                 }]
             });
         }
-		var volStore = Ext.create('Ext.data.Store', {
-	        id: 'volumesStore',
-	        model: Ext.define('volumesModel', {
-	            extend: 'Ext.data.Model',
-	            fields: [{
-	                name: 'vid'
-	            }, {
-	                name: 'name'
-	            }, {
-	                name: 'serv'
-	            }, {
-	                name: 'part'
-	            }, {
-	                name: 'parentID'
-	            }, {
-	                name: 'backupID'
-	            }, {
-	                name: 'cloneID'
-	            }, {
-	                name: 'inUse'
-	            }, {
-	                name: 'needsSalvaged'
-	            }, {
-	                name: 'destroyMe'
-	            }, {
-	                name: 'type'
-	            }, {
-	                name: 'creationDate',
-	                type: 'date',
-	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
-	            }, {
-	                name: 'updateDate',
-	                type: 'date',
-	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
-	            }, {
-	                name: 'backupDate',
-	                type: 'date',
-	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
-	            }, {
-	                name: 'copyDate',
-	                type: 'date',
-	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
-	            }, {
-	                name: 'flags'
-	            }, {
-	                name: 'diskused'
-	            }, {
-	                name: 'maxquota'
-	            }, {
-	                name: 'minquota'
-	            }, {
-	                name: 'status'
-	            }, {
-	                name: 'filecount'
-	            }, {
-	                name: 'dayUse'
-	            }, {
-	                name: 'weekUse'
-	            }, {
-	                name: 'spare2'
-	            }, {
-	                name: 'spare3'
-	            }, {
-	                name: 'cdate',
-	                type: 'date',
-	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
-	            }, {
-	                name: 'udate',
-	                type: 'date',
-	                dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
-	            }, {
-	                name: 'sync'
-	            }]
-	        }),
-	        autoLoad: false,
-	        remoteSort: true,
-	        proxy: {
-	            type: 'rest',
-	            url: URL_PREFIX + '/cell/volume/',
-	            reader: {
-	                type: 'json',
-	                root: 'data',
-	                totalProperty: 'totalCount'
-	            }
-	        }
-	    });
+        var volStore = Ext.create('Ext.data.Store', {
+            id: 'volumesStore',
+            model: Ext.define('volumesModel', {
+                extend: 'Ext.data.Model',
+                fields: [{
+                    name: 'vid'
+                }, {
+                    name: 'name'
+                }, {
+                    name: 'serv'
+                }, {
+                    name: 'part'
+                }, {
+                    name: 'parentID'
+                }, {
+                    name: 'backupID'
+                }, {
+                    name: 'cloneID'
+                }, {
+                    name: 'inUse'
+                }, {
+                    name: 'needsSalvaged'
+                }, {
+                    name: 'destroyMe'
+                }, {
+                    name: 'type'
+                }, {
+                    name: 'creationDate',
+                    type: 'date',
+                    dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+                }, {
+                    name: 'updateDate',
+                    type: 'date',
+                    dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+                }, {
+                    name: 'backupDate',
+                    type: 'date',
+                    dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+                }, {
+                    name: 'copyDate',
+                    type: 'date',
+                    dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+                }, {
+                    name: 'flags'
+                }, {
+                    name: 'diskused'
+                }, {
+                    name: 'maxquota'
+                }, {
+                    name: 'minquota'
+                }, {
+                    name: 'status'
+                }, {
+                    name: 'filecount'
+                }, {
+                    name: 'dayUse'
+                }, {
+                    name: 'weekUse'
+                }, {
+                    name: 'spare2'
+                }, {
+                    name: 'spare3'
+                }, {
+                    name: 'cdate',
+                    type: 'date',
+                    dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+                }, {
+                    name: 'udate',
+                    type: 'date',
+                    dateFormat: 'Y-m-d-H:i:s' // 1970-01-01 01:00:00
+                }, {
+                    name: 'sync'
+                }]
+            }),
+            autoLoad: false,
+            remoteSort: true,
+            proxy: {
+                type: 'rest',
+                url: URL_PREFIX + '/cell/volume/',
+                reader: {
+                    type: 'json',
+                    root: 'data',
+                    totalProperty: 'totalCount'
+                }
+            }
+        });
 
 
         Ext.apply(this, {
-			store: volStore,
+            store: volStore,
             columns: [{
                 text: 'ID',
                 dataIndex: 'vid',
@@ -128,7 +128,7 @@ Ext.define('Ext.cell.volumesGrid', {
                 text: 'Part',
                 dataIndex: 'part',
                 sortable: true,
-				width: 50
+                width: 50
             }, {
                 text: 'parentID',
                 dataIndex: 'parentID',
@@ -139,19 +139,19 @@ Ext.define('Ext.cell.volumesGrid', {
                 text: 'backupID',
                 dataIndex: 'backupID',
                 sortable: true,
-                hidden: true ,
+                hidden: true,
                 flex: 1
             }, {
                 text: 'cloneID',
                 dataIndex: 'cloneID',
                 sortable: true,
-                hidden: true ,
+                hidden: true,
                 flex: 1
             }, {
                 text: 'In Use',
                 dataIndex: 'inUse',
                 sortable: true,
-				width: 50
+                width: 50
             }, {
                 text: 'Need Salvaged',
                 dataIndex: 'needsSalvaged',
@@ -161,7 +161,7 @@ Ext.define('Ext.cell.volumesGrid', {
                 text: 'Destroy Me',
                 dataIndex: 'destroyMe',
                 sortable: true,
-                hidden: true ,
+                hidden: true,
                 flex: 1
             }, {
                 text: 'Type',
@@ -173,42 +173,42 @@ Ext.define('Ext.cell.volumesGrid', {
                 dataIndex: 'creationDate',
                 sortable: true,
                 flex: 1,
-				hidden: true,
+                hidden: true,
                 renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')
             }, {
                 text: 'updateDate',
                 dataIndex: 'updateDate',
                 sortable: true,
                 flex: 1,
-				hidden: true,
+                hidden: true,
                 renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')
             }, {
                 text: 'backupDate',
                 dataIndex: 'backupDate',
                 sortable: true,
                 flex: 1,
-				hidden: true,
+                hidden: true,
                 renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')
             }, {
                 text: 'copyDate',
                 dataIndex: 'copyDate',
                 sortable: true,
-                hidden: true , 
+                hidden: true,
                 flex: 1,
-				hidden: true,
+                hidden: true,
                 renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')
             }, {
                 text: 'flags',
                 dataIndex: 'flags',
                 sortable: true,
-                hidden: true ,
+                hidden: true,
                 flex: 1
             }, {
                 text: 'diskused',
                 dataIndex: 'diskused',
                 sortable: true,
                 flex: 2,
-				renderer: this.diskUsedPB
+                renderer: this.diskUsedPB
             }, {
                 text: 'maxquota',
                 dataIndex: 'maxquota',
@@ -218,7 +218,7 @@ Ext.define('Ext.cell.volumesGrid', {
                 text: 'minquota',
                 dataIndex: 'minquota',
                 sortable: true,
-                hidden: true ,
+                hidden: true,
                 flex: 1
             }, {
                 text: 'status',
@@ -244,26 +244,26 @@ Ext.define('Ext.cell.volumesGrid', {
                 text: 'spare2',
                 dataIndex: 'spare2',
                 sortable: true,
-                hidden: true ,
+                hidden: true,
                 flex: 1
-            },  { // Da qui in poi....
+            }, { // Da qui in poi....
                 text: 'spare3',
                 dataIndex: 'spare3',
                 sortable: true,
-                hidden: true ,
+                hidden: true,
                 flex: 1
             }, {
                 text: 'Creation Date',
                 dataIndex: 'cdate',
                 sortable: true,
-                hidden: true ,
+                hidden: true,
                 flex: 1,
                 renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')
             }, {
                 text: 'Last Update',
                 dataIndex: 'udate',
-                sortable: true, 
-                hidden: true ,
+                sortable: true,
+                hidden: true,
                 flex: 1,
                 renderer: Ext.util.Format.dateRenderer('Y-m-d H:i')
             }, {
@@ -273,175 +273,184 @@ Ext.define('Ext.cell.volumesGrid', {
                 hidden: true,
                 flex: 1
             }],
-            dockedItems: [{
-                xtype: 'toolbar',
-                dock: 'top',
-                items: [{
-                    iconCls: 'icon-add',
-                    tooltip: 'Create new Volume',
-                    scope: this,
-                    handler: function () {
-                        this.volumesAdd();
-                    }
-                }, '-', {
-                    iconCls: 'icon-edit',
-                    tooltip: 'Edit volume',
-                    scope: this,
-                    handler: function () {
-                        var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
-                        if (m.length != 0) {
-							Ext.Msg.show({
-			                    title: 'Edit',
-			                    msg: "Are you sure you want to <b>edit</b> the volume <b>"+m[0].data['name']+"</b>?",
-			                    buttons: Ext.Msg.YESNO,
-			                    scope: this,
-			                    fn: function (btw) {
-			                        if (btw == 'yes') {
-			                             this.volumesEdit(m[0]);
-			                        }
-			                    },
-			                    icon: Ext.MessageBox.QUESTION,
-			                    minWidth: 270
-			                });
-                        } else {
-                            Ext.Msg.alert('Error', 'You must select one volume to edit!');
-                        }
-                    }
-                }, '-', {
-                    iconCls: 'icon-del',
-                    tooltip: 'Delete volume',
-                    scope: this,
-                    handler: function () {
-                        var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
-                        if (m.length > 0) {
-							Ext.Msg.show({
-			                    title: 'Delete',
-			                    msg: "Are you sure you want to <b>delete</b> the volume <b>"+m[0].data['name']+"</b>?",
-			                    buttons: Ext.Msg.YESNO,
-			                    scope: this,
-			                    fn: function (btw) {
-			                        if (btw == 'yes') {
-			                             this.volumesDelete(m[0]);
-			                        }
-			                    },
-			                    icon: Ext.MessageBox.QUESTION,
-			                    minWidth: 270
-			                });
-                        } else {
-                            Ext.Msg.alert('Error', 'You must select one volume to delete!');
-                        }
-                    }
+			dockedItems: [{
+			    xtype: 'toolbar',
+			    dock: 'top',
+			    items: [{
+			        iconCls: 'icon-add',
+			        tooltip: 'Create new Volume',
+			        scope: this,
+			        handler: function () {
+			            this.volumesAdd();
+			        }
+			    }, '-',
+			    {
+			        iconCls: 'icon-edit',
+			        tooltip: 'Edit volume',
+			        scope: this,
+			        handler: function () {
+			            this.buttonHandler('edit');
+			        }
+			    }, '-',
+			    {
+			        iconCls: 'icon-del',
+			        tooltip: 'Delete volume',
+			        scope: this,
+			        handler: function () {
+						this.buttonHandler('delete');
+			        }
 
-                }, '-', {
-                    //iconCls: 'icon-move',
-                    tooltip: 'Move volume',
-                    text: "Move",
-                    scope: this,
-                    handler: function () {
-                        var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
-                        if (m.length > 0) {
-                            Ext.Msg.alert('Demo', 'Moving volume ' + m[0].data['name'] + ' <br>(DEMO)');
-                        } else {
-                            Ext.Msg.alert('Error', 'You must select one volume to move!');
-                        }
-                    }
+			    }, '-',
+			    {
+			        iconCls: 'icon-move',
+			        tooltip: 'Move volume',
+			        text: "Move",
+			        scope: this,
+			        handler: function () {
+						this.buttonHandler('move');
+			        }
 
-                }, '-', {
-	                    //iconCls: 'icon-release',
-	                    tooltip: 'Release volume',
-	                    text: "Release",
-	                    scope: this,
-	                    handler: function () {
-	                        var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
-	                        if (m.length > 0) {
-	                            Ext.Msg.alert('Demo', 'Releasing volume ' + m[0].data['name'] + ' <br>(DEMO)');
-	                        } else {
-	                            Ext.Msg.alert('Error', 'You must select one volume to release!');
-	                        }
-	                    }
+			    }, '-',
+			    {
+			        iconCls: 'icon-release',
+			        tooltip: 'Release volume',
+			        text: "Release",
+			        scope: this,
+			        handler: function () {
+						this.buttonHandler('release');
+			        }
 
-	                }, '-', {
-		                    //iconCls: 'icon-clone',
-		                    tooltip: 'Clone volume',
-		                    text: "Clone",
-		                    scope: this,
-		                    handler: function () {
-		                        var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
-		                        if (m.length > 0) {
-		                            Ext.Msg.alert('Demo', 'Cloning volume ' + m[0].data['name'] + ' <br>(DEMO)');
-		                        } else {
-		                            Ext.Msg.alert('Error', 'You must select one volume to clone!');
-		                        }
-		                    }
+			    }, '-',
+			    {
+			        iconCls: 'icon-reply',
+			        tooltip: 'Reply the volume',
+			        text: "Reply",
+			        scope: this,
+			        handler: function () {
+						this.buttonHandler('reply');
+			        }
 
-		                }, '-', Ext.create('Ext.form.field.ComboBox', {
-                    store: Ext.create('Ext.data.Store', {
-                        model: 'comboBoxModel',
-                        data: [{
-                            'id': 'serv',
-                            'name': 'Server'
-                        }, {
-                            'id': 'name',
-                            'name': 'Volume Name'
-                        }, {
-                            'id': 'vid',
-                            'name': 'Volume Id'
-                        }, {
-                            'id': 'type',
-                            'name': 'Volume Type'
-                        }, {
-                            'id': 'status',
-                            'name': 'Volume Status'
-                        }]
-                    }),
-                    id: 'selectVolumesField',
-                    displayField: 'name',
-                    valueField: 'id',
-                    value: 'serv',
-                    width: 110,
-                    typeAhead: false,
-                    queryMode: 'local',
-                    triggerAction: 'all',
-                    allowBlank: false,
-                    selectOnFocus: true,
-                    forceSelection: true,
-                    editable: false
-                }), ' ',
-                {
-                    id: 'searchVolumesField',
-                    emptyText: 'Search',
-                    xtype: 'textfield',
-                    width: 250,
-                    allowBlank: true,
-                    listeners: {
-                        'specialkey': function (f, e) {
-                            if (e.getKey() == 13) Ext.getCmp('Volumes').volumesSearch();
-                        }
-                    }
-                }, {
-                    iconCls: 'icon-search',
-                    tooltip: 'Search',
-                    scope: this,
-                    handler: function () {
-                        this.volumesSearch();
-                    }
-                }, '-',
-                {
-                    iconCls: 'icon-reset',
-                    tooltip: 'Reset',
-                    scope: this,
-                    handler: function () {
-                        this.volumesResetSearch();
-                    }
-                }, '-',{
-					iconCls: 'icon-csv',
-					tooltip: 'Export all data',
-					scope: this,
-					handler: function () {
-						this.csv_export();
-					}
-				}]
-            }],
+			    }, '-',
+			    {
+			        iconCls: 'icon-online',
+			        tooltip: 'Online',
+			        text: "Online",
+			        scope: this,
+			        handler: function () {
+						this.buttonHandler('online');
+			        }
+			    }, '-',
+			    {
+			        iconCls: 'icon-offline',
+			        tooltip: 'Offline',
+			        text: "Offline",
+			        scope: this,
+			        handler: function () {
+						this.buttonHandler('offline');
+			        }
+			    }, '-',	{
+					    text: 'Search',
+					    iconCls: 'ex-menu',
+					    menu: {
+					        id: 'search-menu',
+					        items: [Ext.create('Ext.form.field.ComboBox', {
+						        store: Ext.create('Ext.data.Store', {
+						            model: 'comboBoxModel',
+						            data: [{
+						                'id': 'serv',
+						                'name': 'Server'
+						            }, {
+						                'id': 'name',
+						                'name': 'Volume Name'
+						            }, {
+						                'id': 'vid',
+						                'name': 'Volume Id'
+						            }, {
+						                'id': 'type',
+						                'name': 'Volume Type'
+						            }, {
+						                'id': 'status',
+						                'name': 'Volume Status'
+						            }]
+						        }),
+						        id: 'selectVolumesField',
+						        displayField: 'name',
+						        valueField: 'id',
+						        value: 'serv',
+						        width: 110,
+						        typeAhead: false,
+						        queryMode: 'local',
+						        triggerAction: 'all',
+						        allowBlank: false,
+						        selectOnFocus: true,
+						        forceSelection: true,
+						        editable: false
+						    }), ' ',
+						    {
+						        id: 'searchVolumesField',
+						        emptyText: 'Search',
+						        xtype: 'textfield',
+						        width: 250,
+						        allowBlank: true,
+						        listeners: {
+						            'specialkey': function (f, e) {
+						                if (e.getKey() == 13) Ext.getCmp('Volumes').volumesSearch();
+						            }
+						        }
+						    }, {
+						        iconCls: 'icon-search',
+						        tooltip: 'Search',
+								text: "Make Search",
+						        scope: this,
+						        handler: function () {
+						            this.volumesSearch();
+						        }
+						    }, '-',
+						    {
+						        iconCls: 'icon-reset',
+						        tooltip: 'Reset',
+								text: 'Reset Search Filters',
+						        scope: this,
+						        handler: function () {
+						            this.volumesResetSearch();
+						        }
+						    }]
+					    }
+					},
+			    {
+			        text: 'Export/Import',
+			        iconCls: 'ex-menu',
+			        // <-- icon
+			        menu: {
+			            id: 'export-menu',
+			            items: [{
+			                iconCls: 'icon-csv',
+			                text: 'Csv Export',
+			                tooltip: 'Export all data',
+			                scope: this,
+			                handler: function () {
+			                    this.csv_export();
+			                }
+			            }, {
+			                iconCls: 'icon-dump',
+			                text: 'Dump Volume',
+			                tooltip: 'Dump',
+			                scope: this,
+			                handler: function () {
+								this.buttonHandler('dump');
+			                }
+			            }, 	{
+				                iconCls: 'icon-restore',
+				                text: 'Restore Dump',
+				                tooltip: 'Restore Dump',
+				                scope: this,
+				                handler: function () {
+									this.buttonHandler('restore');
+				                }
+				            }]
+			        }
+			    }]
+			}],
             bbar: Ext.create('Ext.PagingToolbar', {
                 id: 'volumesPaging',
                 store: volStore,
@@ -458,23 +467,89 @@ Ext.define('Ext.cell.volumesGrid', {
     getId: function () {
         return this.id;
     },
-	diskUsedPB: function (cellValue, css_class, row){
-			var id = Ext.id();
+    diskUsedPB: function (cellValue, css_class, row) {
+        var id = Ext.id();
+
+        Ext.Function.defer(function () {
+            var percentage = Ext.util.Format.round(((cellValue * 100) / row.data['maxquota']), 3);
+            var pBar = Ext.create('Ext.ProgressBar', {
+                renderTo: id
+            });
+            pBar.updateProgress(percentage / 100, percentage + '%');
+        }, 25);
+
+        return '<div id="' + id + '"></div>';
+
+    },
+    buttonHandler: function (operation) {
+        switch (operation) {
+			case 'edit':
+        	case 'move':
+        	case 'reply':
+			case 'delete':
+			case 'online':
+			case 'offline':
+			case 'dump':
 			
-			Ext.Function.defer(function(){
-				var percentage = Ext.util.Format.numberRenderer('0.000')((cellValue*100)/row.data['maxquota']);				
-				var pBar = Ext.create('Ext.ProgressBar', { renderTo: id });
-				pBar.updateProgress(percentage/100, percentage+'%');
-			}, 25);
+            	var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
+            	if (m.length != 0) {
+                	Ext.Msg.show({
+                    	title: operation.charAt(0).toUpperCase() + operation.slice(1),
+                    	msg: "Are you sure you want to <b>" + operation + "</b> the volume <b>" + m[0].data['name'] + "</b>?",
+                    	buttons: Ext.Msg.YESNO,
+                    	scope: this,
+                    	fn: function (btw) {
+                        	if (btw == 'yes') {
+                            	//this.volumesEdit(m[0]);
+								eval("this.volumes"+operation.charAt(0).toUpperCase() + operation.slice(1)+"(m[0])");
+							 
+                        	}
+                    	},
+                    	icon: Ext.MessageBox.QUESTION,
+                    	minWidth: 270
+                	});
+            	} else {
+                	Ext.Msg.alert('Error', 'You must select one volume to '+operation+'!');
+            	}
+            break;
+
+			case 'release':
+			var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
+            if (m.length > 0) {
+                if (m[0].data['type'] == 'RW') {
+                    Ext.Msg.show({
+                        title: 'Move',
+                        msg: "Are you sure you want to <b>release</b> the volume <b>" + m[0].data['name'] + "</b>?",
+                        buttons: Ext.Msg.YESNO,
+                        scope: this,
+                        fn: function (btw) {
+                            if (btw == 'yes') {
+                                this.volumesRelease(m[0]);
+                            }
+                        },
+                        icon: Ext.MessageBox.QUESTION,
+                        minWidth: 270
+                    });
+                } else {
+                    Ext.Msg.alert('Error', 'You can\'t release ' + m[0].data['name'] + '<br>The volume is not in RW mode');
+                }
+            } else {
+                Ext.Msg.alert('Error', 'You must select one volume to release!');
+            }
 			
-			return '<div id="' + id + '"></di>';
-			
-	},
-    csv_export: function(){
-		var this_url = Ext.getCmp('Volumes').store.getProxy().url;
-		location.href = this_url+"?output=csv";
-	},
-	volumesSearch: function () {
+			break;
+            //case <valore 2>:
+            //istruzioni
+            //break;
+            default:
+				Ext.Msg.alert('Demo', 'Not implemented yet');
+        }
+    },
+    csv_export: function () {
+        var this_url = Ext.getCmp('Volumes').store.getProxy().url;
+        location.href = this_url + "?output=csv";
+    },
+    volumesSearch: function () {
         Ext.getCmp('Volumes').store.setProxy({
             url: URL_PREFIX + '/rest/log/?filter=' + Ext.getCmp('selectVolumesField').getSubmitValue() + '&filterValue=' + Ext.getCmp('searchVolumesField').getSubmitValue(),
             type: 'rest',
@@ -512,7 +587,7 @@ Ext.define('Ext.cell.volumesGrid', {
     },
     volumesDelete: function (row) {
         Ext.Ajax.request({
-            url: URL_PREFIX + '/cell/volume/' + row.data['id'],
+            url: URL_PREFIX + '/cell/volume/' + row.data['vid'],
             method: 'DELETE',
             success: function (response) {
                 var obj = Ext.JSON.decode(response.responseText);
@@ -712,14 +787,14 @@ Ext.define('Ext.cell.volumesGrid', {
                 handler: function () {
                     if (addForm.getForm().isValid()) {
                         addForm.getForm().submit({
-                            method: 'POST',
+                            method: 'PUT',
                             waitTitle: 'Connecting',
                             waitMsg: 'Sending data...',
                             success: function (form, action) {
                                 obj = Ext.JSON.decode(action.response.responseText);
                                 Ext.Msg.alert('OK', obj.message);
                                 addWindow.close();
-                                Ext.getCmp('Scheduler').store.load();
+                                Ext.getCmp('Volumes').store.load();
                             },
                             failure: function (form, action) {
                                 if (action.failureType == 'connect') {
@@ -743,7 +818,6 @@ Ext.define('Ext.cell.volumesGrid', {
             closable: true,
             border: false,
             plain: true,
-
             layout: 'fit',
             resizable: true,
             modal: true,
@@ -753,9 +827,6 @@ Ext.define('Ext.cell.volumesGrid', {
     },
     volumesEdit: function (row) {
         var vedit_id = Ext.id();
-
-console.log(row.data['end_date']);
-
         var veditOwnerCombo = Ext.create('Ext.form.field.ComboBox', {
             fieldLabel: 'Owner',
             name: 'owner',
@@ -818,7 +889,7 @@ console.log(row.data['end_date']);
             autoScroll: true,
             frame: true,
             width: 300,
-            url: URL_PREFIX + '/volume/' + row.data['id'],
+            url: URL_PREFIX + '/volume/' + row.data['vid'],
             id: 'volumesEdit-form' + vedit_id,
             fieldDefaults: {
                 msgTarget: 'side'
@@ -871,7 +942,7 @@ console.log(row.data['end_date']);
                                 obj = Ext.JSON.decode(action.response.responseText);
                                 Ext.Msg.alert('OK', obj.message);
                                 editWindow.close();
-                                Ext.getCmp('Scheduler').store.load();
+                                Ext.getCmp('Volumes').store.load();
                             },
                             failure: function (form, action) {
                                 if (action.failureType == 'connect') {
@@ -889,7 +960,7 @@ console.log(row.data['end_date']);
         });
 
         var editWindow = Ext.widget('window', {
-            title: 'Edit '+row.data['name'],
+            title: 'Edit ' + row.data['name'],
             id: 'volumesEdit-win' + vedit_id,
             constrain: true,
             closable: true,
@@ -908,6 +979,410 @@ console.log(row.data['end_date']);
 
         veditProjectCombo.store.on('load', function () {
             veditProjectCombo.setRawValue(veditProjectCombo.getSubmitValue());
+        });
+    },
+    volumesMove: function (row) {
+        var vmove_id = Ext.id();
+
+        var vmovePartCombo = Ext.create('Ext.form.field.ComboBox', {
+            fieldLabel: 'Partition',
+            name: 'part',
+            id: 'vmove-partCombo' + vmove_id,
+            store: Ext.create('Ext.data.Store', {
+                model: 'comboBoxModel',
+                proxy: {
+                    type: 'rest',
+                    url: URL_PREFIX + '/menu/volume/',
+                    reader: {
+                        type: 'json',
+                        root: 'data'
+                    }
+                },
+                autoLoad: true
+            }),
+            displayField: 'name',
+            valueField: 'id',
+            anchor: '98%',
+            typeAhead: false,
+            triggerAction: 'all',
+            emptyText: 'Select...',
+            allowBlank: false,
+            selectOnFocus: true,
+            forceSelection: true,
+            editable: false,
+            value: row.data['part']
+        });
+
+        var vmoveSrvCombo = Ext.create('Ext.form.field.ComboBox', {
+            fieldLabel: 'Server',
+            name: 'serv',
+            id: 'vmove-serverCombo' + vmove_id,
+            store: Ext.create('Ext.data.Store', {
+                model: 'comboBoxModel',
+                proxy: {
+                    type: 'rest',
+                    url: URL_PREFIX + '/menu/volume/',
+                    reader: {
+                        type: 'json',
+                        root: 'data'
+                    }
+                },
+                autoLoad: true
+            }),
+            displayField: 'name',
+            valueField: 'id',
+            anchor: '98%',
+            typeAhead: false,
+            triggerAction: 'all',
+            emptyText: 'Select...',
+            allowBlank: false,
+            selectOnFocus: true,
+            forceSelection: true,
+            editable: false,
+            value: row.data['serv'],
+            listeners: {
+                change: function () {
+                    vmovePartCombo.clearValue();
+                    if (this.getSubmitValue() != null) {
+                        vmovePartCombo.store.setProxy({
+                            url: URL_PREFIX + '/menu/volume/' + this.getSubmitValue(),
+                            type: 'rest',
+                            reader: {
+                                type: 'json',
+                                root: 'data'
+                            }
+                        });
+                        vmovePartCombo.enable();
+                        vmovePartCombo.store.load();
+                    } else {
+                        vmovePartCombo.setDisabled(true);
+                    }
+                }
+            }
+        });
+
+        var moveForm = Ext.widget('form', {
+            autoScroll: true,
+            frame: true,
+            width: 300,
+            url: URL_PREFIX + '/volume/' + row.data['vid'],
+            id: 'volumesMove-form' + vmove_id,
+            fieldDefaults: {
+                msgTarget: 'side'
+            },
+            items: [{
+                xtype: 'hidden',
+                name: 'old_server',
+                value: row.data['serv']
+            }, {
+                xtype: 'hidden',
+                name: 'old_part',
+                value: row.data['part']
+            },
+            vmoveSrvCombo, vmovePartCombo],
+            buttons: [{
+                text: 'Cancel',
+                handler: function () {
+                    moveWindow.close();
+                }
+            }, {
+                text: 'Reset',
+                handler: function () {
+                    moveForm.getForm().reset();
+                }
+            }, {
+                text: 'Send',
+                handler: function () {
+                    if (moveForm.getForm().isValid()) {
+                        moveForm.getForm().submit({
+                            method: 'PUT',
+                            waitTitle: 'Connecting',
+                            waitMsg: 'Sending data...',
+                            success: function (form, action) {
+                                obj = Ext.JSON.decode(action.response.responseText);
+                                Ext.Msg.alert('OK', obj.message);
+                                moveWindow.close();
+                                Ext.getCmp('Volumes').store.load();
+                            },
+                            failure: function (form, action) {
+                                if (action.failureType == 'connect') {
+                                    Ext.Msg.alert('Warning!', 'Rest server is unreachable ');
+                                } else {
+                                    obj = Ext.JSON.decode(action.response.responseText);
+                                    Ext.Msg.alert('Failed!!!', obj.message);
+                                }
+                                moveForm.getForm().reset();
+                            }
+                        });
+                    }
+                }
+            }]
+        });
+
+        var moveWindow = Ext.widget('window', {
+            title: 'Move ' + row.data['name'],
+            id: 'volumesMove-win' + vmove_id,
+            constrain: true,
+            closable: true,
+            border: false,
+            plain: true,
+            layout: 'fit',
+            resizable: true,
+            modal: true,
+            items: moveForm
+        });
+        moveWindow.show();
+
+        vmoveSrvCombo.store.on('load', function () {
+            vmoveSrvCombo.setRawValue(vmoveSrvCombo.getSubmitValue());
+        });
+
+        vmovePartCombo.store.on('load', function () {
+            vmovePartCombo.setRawValue(vmovePartCombo.getSubmitValue());
+        });
+    },
+    volumesRelease: function (row) {
+        Ext.Ajax.request({
+            url: URL_PREFIX + '/volume/' + row.data['vid'],
+            method: 'POST',
+            params: {
+                action: 'release'
+            },
+            failure: function (response) {
+                Ext.Msg.alert('Fail', 'Some error occured');
+            },
+            success: function (response) {
+                var resp = Ext.JSON.decode(response.responseText);
+                if (resp.success == false) {
+                    Ext.Msg.alert('Error', resp.errorInfo);
+                } else {
+                    Ext.Msg.alert('Success', 'The volume ' + row.data['name'] + ' was released successfully');
+                }
+            }
+        });
+    },
+    volumesReply: function (row) {
+
+        var vreply_id = Ext.id();
+
+        var vreplyPartCombo = Ext.create('Ext.form.field.ComboBox', {
+            fieldLabel: 'Partition',
+            name: 'part',
+            id: 'vreply-partCombo' + vreply_id,
+            store: Ext.create('Ext.data.Store', {
+                model: 'comboBoxModel',
+                proxy: {
+                    type: 'rest',
+                    url: URL_PREFIX + '/menu/volume/',
+                    reader: {
+                        type: 'json',
+                        root: 'data'
+                    }
+                },
+                autoLoad: true
+            }),
+            displayField: 'name',
+            valueField: 'id',
+            anchor: '98%',
+            typeAhead: false,
+            triggerAction: 'all',
+            emptyText: 'Select...',
+            allowBlank: false,
+            selectOnFocus: true,
+            forceSelection: true,
+            // Se non carica il value la colpa è del forceSelection!
+            editable: false,
+            value: row.data['part']
+        });
+
+        var vreplySrvCombo = Ext.create('Ext.form.field.ComboBox', {
+            fieldLabel: 'Server',
+            name: 'serv',
+            id: 'vreply-serverCombo' + vreply_id,
+            store: Ext.create('Ext.data.Store', {
+                model: 'comboBoxModel',
+                proxy: {
+                    type: 'rest',
+                    url: URL_PREFIX + '/menu/volume/',
+                    reader: {
+                        type: 'json',
+                        root: 'data'
+                    }
+                },
+                autoLoad: true
+            }),
+            displayField: 'name',
+            valueField: 'id',
+            anchor: '98%',
+            typeAhead: false,
+            triggerAction: 'all',
+            emptyText: 'Select...',
+            allowBlank: false,
+            selectOnFocus: true,
+            forceSelection: true,
+            editable: false,
+            value: row.data['serv'],
+            listeners: {
+                change: function () {
+                    vreplyPartCombo.clearValue();
+                    if (this.getSubmitValue() != null) {
+                        vreplyPartCombo.store.setProxy({
+                            url: URL_PREFIX + '/menu/volume/' + this.getSubmitValue(),
+                            type: 'rest',
+                            reader: {
+                                type: 'json',
+                                root: 'data'
+                            }
+                        });
+                        vreplyPartCombo.enable();
+                        vreplyPartCombo.store.load();
+                    } else {
+                        vreplyPartCombo.setDisabled(true);
+                    }
+                }
+            }
+        });
+
+        var replyForm = Ext.widget('form', {
+            autoScroll: true,
+            frame: true,
+            width: 300,
+            url: URL_PREFIX + '/volume/' + row.data['vid'],
+            id: 'volumesReply-form' + vreply_id,
+            fieldDefaults: {
+                msgTarget: 'side'
+            },
+            items: [
+            vreplySrvCombo, vreplyPartCombo,
+            {
+                xtype: 'checkboxfield',
+                //boxLabel: 'Item 1',
+                fieldLabel: 'Release',
+                name: 'release'
+            }],
+            buttons: [{
+                text: 'Cancel',
+                handler: function () {
+                    replyWindow.close();
+                }
+            }, {
+                text: 'Reset',
+                handler: function () {
+                    replyForm.getForm().reset();
+                }
+            }, {
+                text: 'Send',
+                handler: function () {
+                    if (replyForm.getForm().isValid()) {
+                        replyForm.getForm().submit({
+                            method: 'PUT',
+                            waitTitle: 'Connecting',
+                            waitMsg: 'Sending data...',
+                            params: {
+                                action: 'reply'
+                            },
+                            success: function (form, action) {
+                                obj = Ext.JSON.decode(action.response.responseText);
+                                Ext.Msg.alert('OK', obj.message);
+                                replyWindow.close();
+                                Ext.getCmp('Volumes').store.load();
+                            },
+                            failure: function (form, action) {
+                                if (action.failureType == 'connect') {
+                                    Ext.Msg.alert('Warning!', 'Rest server is unreachable ');
+                                } else {
+                                    obj = Ext.JSON.decode(action.response.responseText);
+                                    Ext.Msg.alert('Failed!!!', obj.message);
+                                }
+                                replyForm.getForm().reset();
+                            }
+                        });
+                    }
+                }
+            }]
+        });
+
+        var replyWindow = Ext.widget('window', {
+            title: 'Reply ' + row.data['name'],
+            id: 'volumesReply-win' + vreply_id,
+            constrain: true,
+            closable: true,
+            border: false,
+            plain: true,
+            layout: 'fit',
+            resizable: true,
+            modal: true,
+            items: replyForm
+        });
+
+        replyWindow.show();
+
+        vreplySrvCombo.store.on('load', function () {
+            vreplySrvCombo.setRawValue(vreplySrvCombo.getSubmitValue());
+        });
+
+        vreplyPartCombo.store.on('load', function () {
+            vreplyPartCombo.setRawValue(vreplyPartCombo.getSubmitValue());
+        });
+    },
+    volumesOnline: function (row) {
+        Ext.Ajax.request({
+            url: URL_PREFIX + '/volume/' + row.data['vid'],
+            method: 'POST',
+            params: {
+                action: 'online'
+            },
+            failure: function (response) {
+                Ext.Msg.alert('Fail', 'Some error occured');
+            },
+            success: function (response) {
+                var resp = Ext.JSON.decode(response.responseText);
+                if (resp.success == false) {
+                    Ext.Msg.alert('Error', resp.errorInfo);
+                } else {
+                    Ext.Msg.alert('Success', 'The volume ' + row.data['name'] + ' is now online');
+                }
+            }
+        });
+    },
+    volumesOffline: function (row) {
+        Ext.Ajax.request({
+            url: URL_PREFIX + '/volume/' + row.data['vid'],
+            method: 'POST',
+            params: {
+                action: 'offline'
+            },
+            failure: function (response) {
+                Ext.Msg.alert('Fail', 'Some error occured');
+            },
+            success: function (response) {
+                var resp = Ext.JSON.decode(response.responseText);
+                if (resp.success == false) {
+                    Ext.Msg.alert('Error', resp.errorInfo);
+                } else {
+                    Ext.Msg.alert('Success', 'The volume ' + row.data['name'] + ' is now offline');
+                }
+            }
+        });
+    },
+    volumesDump: function (row) {
+        Ext.Ajax.request({
+            url: URL_PREFIX + '/volume/' + row.data['vid'],
+            method: 'POST',
+            params: {
+                action: 'dump'
+            },
+            failure: function (response) {
+                Ext.Msg.alert('Fail', 'Some error occured');
+            },
+            success: function (response) {
+                var resp = Ext.JSON.decode(response.responseText);
+                if (resp.success == false) {
+                    Ext.Msg.alert('Error', resp.errorInfo);
+                } else {
+                    Ext.Msg.alert('Success', 'The volume ' + row.data['name'] + ' was dumped succesfully');
+                }
+            }
         });
     }
 });
