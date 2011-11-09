@@ -277,161 +277,157 @@ Ext.define('Ext.cell.volumesGrid', {
 			    xtype: 'toolbar',
 			    dock: 'top',
 			    items: [{
-			        iconCls: 'icon-add',
-			        tooltip: 'Create new Volume',
-			        scope: this,
-			        handler: function () {
-			            this.volumesAdd();
-			        }
-			    }, '-',
-			    {
-			        iconCls: 'icon-edit',
-			        tooltip: 'Edit volume',
-			        scope: this,
-			        handler: function () {
-			            this.buttonHandler('edit');
-			        }
-			    }, '-',
-			    {
-			        iconCls: 'icon-del',
-			        tooltip: 'Delete volume',
-			        scope: this,
-			        handler: function () {
-						this.buttonHandler('delete');
-			        }
+				text: 'Main Operations',
+				iconCls: 'ex-menu',
+				// <-- icon
+				menu: {
+					id: 'mainops-menu',
+					items: [{
+						text: 'Create',
+				        iconCls: 'icon-add',
+				        tooltip: 'Create new Volume',
+				        scope: this,
+				        handler: function () {
+				            this.volumesAdd();
+				        }
+				    }, {
+						text: 'Edit',
+				        iconCls: 'icon-edit',
+				        tooltip: 'Edit volume',
+				        scope: this,
+				        handler: function () {
+				            this.buttonHandler('edit');
+				        }
+				    }, {
+						text: 'Delete',
+				        iconCls: 'icon-del',
+				        tooltip: 'Delete volume',
+				        scope: this,
+				        handler: function () {
+							this.buttonHandler('delete');
+				        }
 
-			    }, '-',
-			    {
-			        iconCls: 'icon-move',
-			        tooltip: 'Move volume',
-			        text: "Move",
-			        scope: this,
-			        handler: function () {
-						this.buttonHandler('move');
-			        }
+				    }, {
+				        iconCls: 'icon-move',
+				        tooltip: 'Move volume',
+				        text: "Move",
+				        scope: this,
+				        handler: function () {
+							this.buttonHandler('move');
+				        }
 
-			    }, '-',
-			    {
-			        iconCls: 'icon-release',
-			        tooltip: 'Release volume',
-			        text: "Release",
-			        scope: this,
-			        handler: function () {
-						this.buttonHandler('release');
-			        }
+				    }, {
+						id: 'releaseButton',
+				        iconCls: 'icon-release',
+				        tooltip: 'Release volume',
+				        text: "Release",
+				        scope: this,
+				        handler: function () {
+							this.buttonHandler('release');
+				        }
 
-			    }, '-',
-			    {
-			        iconCls: 'icon-reply',
-			        tooltip: 'Reply the volume',
-			        text: "Reply",
-			        scope: this,
-			        handler: function () {
-						this.buttonHandler('reply');
-			        }
+				    }, {
+						id: 'replyButton',
+				        iconCls: 'icon-reply',
+				        tooltip: 'Reply the volume',
+				        text: "Reply",
+				        scope: this,
+				        handler: function () {
+							this.buttonHandler('reply');
+				        }
 
-			    }, '-',
-			    {
-			        iconCls: 'icon-online',
-			        tooltip: 'Online',
-			        text: "Online",
-			        scope: this,
-			        handler: function () {
-						this.buttonHandler('online');
-			        }
-			    }, '-',
-			    {
-			        iconCls: 'icon-offline',
-			        tooltip: 'Offline',
-			        text: "Offline",
-			        scope: this,
-			        handler: function () {
-						this.buttonHandler('offline');
-			        }
-			    }, '-',	{
-					    text: 'Search',
-					    iconCls: 'ex-menu',
-					    menu: {
-					        id: 'search-menu',
-					        items: [Ext.create('Ext.form.field.ComboBox', {
-						        store: Ext.create('Ext.data.Store', {
-						            model: 'comboBoxModel',
-						            data: [{
-						                'id': 'serv',
-						                'name': 'Server'
-						            }, {
-						                'id': 'name',
-						                'name': 'Volume Name'
-						            }, {
-						                'id': 'vid',
-						                'name': 'Volume Id'
-						            }, {
-						                'id': 'type',
-						                'name': 'Volume Type'
-						            }, {
-						                'id': 'status',
-						                'name': 'Volume Status'
-						            }]
-						        }),
-						        id: 'selectVolumesField',
-						        displayField: 'name',
-						        valueField: 'id',
-						        value: 'serv',
-						        width: 110,
-						        typeAhead: false,
-						        queryMode: 'local',
-						        triggerAction: 'all',
-						        allowBlank: false,
-						        selectOnFocus: true,
-						        forceSelection: true,
-						        editable: false
-						    }), ' ',
-						    {
-						        id: 'searchVolumesField',
-						        emptyText: 'Search',
-						        xtype: 'textfield',
-						        width: 250,
-						        allowBlank: true,
-						        listeners: {
-						            'specialkey': function (f, e) {
-						                if (e.getKey() == 13) Ext.getCmp('Volumes').volumesSearch();
-						            }
-						        }
-						    }, {
-						        iconCls: 'icon-search',
-						        tooltip: 'Search',
-								text: "Make Search",
-						        scope: this,
-						        handler: function () {
-						            this.volumesSearch();
-						        }
-						    }, '-',
-						    {
-						        iconCls: 'icon-reset',
-						        tooltip: 'Reset',
-								text: 'Reset Search Filters',
-						        scope: this,
-						        handler: function () {
-						            this.volumesResetSearch();
-						        }
-						    }]
-					    }
-					},
-			    {
-			        text: 'Export/Import',
-			        iconCls: 'ex-menu',
+				    }, {
+				        iconCls: 'icon-volumes',
+				        tooltip: 'Online',
+				        text: "Online",
+				        scope: this,
+				        handler: function () {
+							this.buttonHandler('online');
+				        }
+				    }, {
+				        iconCls: 'icon-offline',
+				        tooltip: 'Offline',
+				        text: "Offline",
+				        scope: this,
+				        handler: function () {
+							this.buttonHandler('offline');
+				        }
+				    }]
+				}
+				}, '-',	Ext.create('Ext.form.field.ComboBox', {
+					        store: Ext.create('Ext.data.Store', {
+					            model: 'comboBoxModel',
+					            data: [{
+					                'id': 'serv',
+					                'name': 'Server'
+					            }, {
+					                'id': 'name',
+					                'name': 'Volume Name'
+					            }, {
+					                'id': 'vid',
+					                'name': 'Volume Id'
+					            }, {
+					                'id': 'type',
+					                'name': 'Volume Type'
+					            }, {
+					                'id': 'status',
+					                'name': 'Volume Status'
+					            }]
+					        }),
+					        id: 'selectVolumesField',
+					        displayField: 'name',
+					        valueField: 'id',
+					        value: 'serv',
+					        width: 110,
+					        typeAhead: false,
+					        queryMode: 'local',
+					        triggerAction: 'all',
+					        allowBlank: false,
+					        selectOnFocus: true,
+					        forceSelection: true,
+					        editable: false
+					    }), ' ',
+					    {
+					        id: 'searchVolumesField',
+					        emptyText: 'Search',
+					        xtype: 'textfield',
+					        width: 250,
+					        allowBlank: true,
+					        listeners: {
+					            'specialkey': function (f, e) {
+					                if (e.getKey() == 13) Ext.getCmp('Volumes').volumesSearch();
+					            }
+					        }
+					    }, {
+					        iconCls: 'icon-search',
+					        tooltip: 'Search',
+					        scope: this,
+					        handler: function () {
+					            this.volumesSearch();
+					        }
+					    }, '-',
+					    {
+					        iconCls: 'icon-reset',
+					        tooltip: 'Reset',
+					        scope: this,
+					        handler: function () {
+					            this.volumesResetSearch();
+					        }
+					    }, 	'-',{
+						                iconCls: 'icon-csv',
+						                //text: 'Csv Export',
+						                tooltip: 'Export all data (csv)',
+						                scope: this,
+						                handler: function () {
+						                    this.csv_export();
+						                }
+						            },'-', {
+			        text: 'Dump/Restore',
+			        iconCls: 'dump_menu',
 			        // <-- icon
 			        menu: {
-			            id: 'export-menu',
+			            id: 'dump-menu',
 			            items: [{
-			                iconCls: 'icon-csv',
-			                text: 'Csv Export',
-			                tooltip: 'Export all data',
-			                scope: this,
-			                handler: function () {
-			                    this.csv_export();
-			                }
-			            }, {
 			                iconCls: 'icon-dump',
 			                text: 'Dump Volume',
 			                tooltip: 'Dump',
@@ -445,7 +441,7 @@ Ext.define('Ext.cell.volumesGrid', {
 				                tooltip: 'Restore Dump',
 				                scope: this,
 				                handler: function () {
-									this.buttonHandler('restore');
+									this.volumesRestore();
 				                }
 				            }]
 			        }
@@ -459,6 +455,20 @@ Ext.define('Ext.cell.volumesGrid', {
                 emptyMsg: 'No log to display'
             })
         });
+		
+		this.getSelectionModel().on('selectionchange', function (sm, selectedRecord) {
+			//console.log(selectedRecord[0].data);
+			if (selectedRecord[0].data.type != 'RW'){
+				Ext.getCmp('releaseButton').disable();
+				Ext.getCmp('replyButton').disable();
+			}
+			else {
+				Ext.getCmp('releaseButton').enable();
+				Ext.getCmp('replyButton').enable();
+			}
+		});
+
+
         this.callParent(arguments);
     },
     load: function () {
@@ -485,12 +495,10 @@ Ext.define('Ext.cell.volumesGrid', {
         switch (operation) {
 			case 'edit':
         	case 'move':
-        	case 'reply':
 			case 'delete':
 			case 'online':
 			case 'offline':
 			case 'dump':
-			
             	var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
             	if (m.length != 0) {
                 	Ext.Msg.show({
@@ -514,12 +522,13 @@ Ext.define('Ext.cell.volumesGrid', {
             break;
 
 			case 'release':
+			case 'reply':
 			var m = Ext.getCmp('Volumes').getSelectionModel().getSelection();
             if (m.length > 0) {
                 if (m[0].data['type'] == 'RW') {
                     Ext.Msg.show({
                         title: 'Move',
-                        msg: "Are you sure you want to <b>release</b> the volume <b>" + m[0].data['name'] + "</b>?",
+                        msg: "Are you sure you want to <b>" + operation + "</b> the volume <b>" + m[0].data['name'] + "</b>?",
                         buttons: Ext.Msg.YESNO,
                         scope: this,
                         fn: function (btw) {
@@ -531,7 +540,7 @@ Ext.define('Ext.cell.volumesGrid', {
                         minWidth: 270
                     });
                 } else {
-                    Ext.Msg.alert('Error', 'You can\'t release ' + m[0].data['name'] + '<br>The volume is not in RW mode');
+                    Ext.Msg.alert('Error', 'You can\'t ' + operation + ' ' + m[0].data['name'] + '<br>The volume is not in RW mode');
                 }
             } else {
                 Ext.Msg.alert('Error', 'You must select one volume to release!');
@@ -745,7 +754,8 @@ Ext.define('Ext.cell.volumesGrid', {
             url: URL_PREFIX + '/volume/0',
             id: 'volumesAdd-form' + vadd_id,
             fieldDefaults: {
-                msgTarget: 'side'
+                msgTarget: 'side',
+				labelWidth: 60
             },
             items: [{
                 fieldLabel: 'Name',
@@ -892,7 +902,8 @@ Ext.define('Ext.cell.volumesGrid', {
             url: URL_PREFIX + '/volume/' + row.data['vid'],
             id: 'volumesEdit-form' + vedit_id,
             fieldDefaults: {
-                msgTarget: 'side'
+                msgTarget: 'side',
+				labelWidth: 60
             },
             items: [{
                 fieldLabel: 'Name',
@@ -1068,7 +1079,8 @@ Ext.define('Ext.cell.volumesGrid', {
             url: URL_PREFIX + '/volume/' + row.data['vid'],
             id: 'volumesMove-form' + vmove_id,
             fieldDefaults: {
-                msgTarget: 'side'
+                msgTarget: 'side',
+				labelWidth: 60
             },
             items: [{
                 xtype: 'hidden',
@@ -1250,7 +1262,8 @@ Ext.define('Ext.cell.volumesGrid', {
             url: URL_PREFIX + '/volume/' + row.data['vid'],
             id: 'volumesReply-form' + vreply_id,
             fieldDefaults: {
-                msgTarget: 'side'
+                msgTarget: 'side',
+				labelWidth: 60
             },
             items: [
             vreplySrvCombo, vreplyPartCombo,
@@ -1384,5 +1397,179 @@ Ext.define('Ext.cell.volumesGrid', {
                 }
             }
         });
-    }
+    },
+	volumesRestore: function () {
+
+	    var vrestore_id = Ext.id();
+
+	    var vrestorePartCombo = Ext.create('Ext.form.field.ComboBox', {
+	        fieldLabel: 'Partition',
+	        name: 'part',
+	        id: 'vrestore-partCombo' + vrestore_id,
+	        store: Ext.create('Ext.data.Store', {
+	            model: 'comboBoxModel',
+	            proxy: {
+	                type: 'rest',
+	                url: URL_PREFIX + '/menu/volume/',
+	                reader: {
+	                    type: 'json',
+	                    root: 'data'
+	                }
+	            },
+	            autoLoad: false
+	        }),
+	        displayField: 'name',
+	        valueField: 'id',
+	        anchor: '98%',
+	        typeAhead: false,
+	        triggerAction: 'all',
+	        emptyText: 'Select...',
+	        allowBlank: false,
+	        selectOnFocus: true,
+	        forceSelection: true,
+	        // Se non carica il value la colpa è del forceSelection!
+	        editable: false,
+			disabled: true
+	    });
+
+	    var vrestoreSrvCombo = Ext.create('Ext.form.field.ComboBox', {
+	        fieldLabel: 'Server',
+	        name: 'serv',
+	        id: 'vrestore-serverCombo' + vrestore_id,
+	        store: Ext.create('Ext.data.Store', {
+	            model: 'comboBoxModel',
+	            proxy: {
+	                type: 'rest',
+	                url: URL_PREFIX + '/menu/volume/',
+	                reader: {
+	                    type: 'json',
+	                    root: 'data'
+	                }
+	            },
+	            autoLoad: false
+	        }),
+	        displayField: 'name',
+	        valueField: 'id',
+	        anchor: '98%',
+	        typeAhead: false,
+	        triggerAction: 'all',
+	        emptyText: 'Select...',
+	        allowBlank: false,
+	        selectOnFocus: true,
+	        forceSelection: true,
+	        editable: false,
+	        listeners: {
+	            change: function () {
+	                vrestorePartCombo.clearValue();
+	                if (this.getSubmitValue() != null) {
+	                    vrestorePartCombo.store.setProxy({
+	                        url: URL_PREFIX + '/menu/volume/' + this.getSubmitValue(),
+	                        type: 'rest',
+	                        reader: {
+	                            type: 'json',
+	                            root: 'data'
+	                        }
+	                    });
+	                    vrestorePartCombo.enable();
+	                    vrestorePartCombo.store.load();
+	                } else {
+	                    vrestorePartCombo.setDisabled(true);
+	                }
+	            }
+	        }
+	    });
+
+	    var restoreForm = Ext.widget('form', {
+	        autoScroll: true,
+	        frame: true,
+	        width: 300,
+	        url: URL_PREFIX + '/volume/0',
+	        id: 'volumesRestore-form' + vrestore_id,
+	        fieldDefaults: {
+	            msgTarget: 'side',
+				labelWidth: 60
+	        },
+	        items: [{
+	            fieldLabel: 'Name',
+	            name: 'name',
+	            xtype: 'textfield',
+	            anchor: '98%',
+	            allowBlank: false
+	        },
+	        vrestoreSrvCombo, vrestorePartCombo,
+			{
+	            xtype: 'filefield',
+	            name: 'dump_file',
+	            fieldLabel: 'Dump file',
+				anchor: '98%'
+			}, {
+	            xtype: 'checkboxfield',
+	            fieldLabel: 'Overwrite',
+	            name: 'overwrite'
+	        }],
+	        buttons: [{
+	            text: 'Cancel',
+	            handler: function () {
+	                restoreWindow.close();
+	            }
+	        }, {
+	            text: 'Reset',
+	            handler: function () {
+	                restoreForm.getForm().reset();
+	            }
+	        }, {
+	            text: 'Send',
+	            handler: function () {
+	                if (restoreForm.getForm().isValid()) {
+	                    restoreForm.getForm().submit({
+	                        method: 'PUT',
+	                        waitTitle: 'Connecting',
+	                        waitMsg: 'Sending data...',
+	                        params: {
+	                            action: 'restore'
+	                        },
+	                        success: function (form, action) {
+	                            obj = Ext.JSON.decode(action.response.responseText);
+	                            Ext.Msg.alert('OK', obj.message);
+	                            restoreWindow.close();
+	                            Ext.getCmp('Volumes').store.load();
+	                        },
+	                        failure: function (form, action) {
+	                            if (action.failureType == 'connect') {
+	                                Ext.Msg.alert('Warning!', 'Rest server is unreachable ');
+	                            } else {
+	                                obj = Ext.JSON.decode(action.response.responseText);
+	                                Ext.Msg.alert('Failed!!!', obj.message);
+	                            }
+	                            restoreForm.getForm().reset();
+	                        }
+	                    });
+	                }
+	            }
+	        }]
+	    });
+
+	    var restoreWindow = Ext.widget('window', {
+	        title: 'Restore Dump',
+	        id: 'volumesRestore-win' + vrestore_id,
+	        constrain: true,
+	        closable: true,
+	        border: false,
+	        plain: true,
+	        layout: 'fit',
+	        resizable: true,
+	        modal: true,
+	        items: restoreForm
+	    });
+
+	    restoreWindow.show();
+
+	    vrestoreSrvCombo.store.on('load', function () {
+	        vrestoreSrvCombo.setRawValue(vrestoreSrvCombo.getSubmitValue());
+	    });
+
+	    vrestorePartCombo.store.on('load', function () {
+	        vrestorePartCombo.setRawValue(vrestorePartCombo.getSubmitValue());
+	    });
+	}
 });

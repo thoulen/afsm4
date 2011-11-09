@@ -13,7 +13,7 @@ Ext.define('Ext.core.adminMenu', {
 			expanded: true,
 			allowDrop: false,
 			children: [
-				{id: 'afsm1', text: 'Demo', iconCls: 'icon-scheduler', leaf: true, action: "Ext.getCmp('centralPanel').addTab(new Ext.core.demoTab('Prova'));" },
+				{id: 'afsm1', text: 'Demo', iconCls: 'icon-scheduler', leaf: true, action: "Ext.getCmp('centralPanel').addTab(new Ext.core.demoTab('Prova'));" }
 			]
 		}
 	})

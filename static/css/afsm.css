@@ -32,6 +32,16 @@
     background-image: url('../images/ico/edit.png') !important;
 }
 
+.icon-release {
+	background-size: 16px !important;
+    background-image: url('../images/ico/release_small.png') !important;
+}
+
+.icon-move {
+	background-size: 16px !important;
+    background-image: url('../images/ico/move_small.png') !important;
+}
+
 .icon-logs {
 	background-size: 16px !important;
     background-image: url('../images/ico/logs.png') !important; 
@@ -96,6 +106,26 @@
 	background-size: 16px !important;
     background-image: url('../images/ico/admin_small.png') !important;
 }
+
+.icon-dump {
+	background-size: 16px !important;
+    background-image: url('../images/ico/dump.png') !important;
+}
+.icon-restore {
+	background-size: 16px !important;
+    background-image: url('../images/ico/restore.png') !important;
+}
+.icon-offline {
+	background-size: 16px !important;
+    background-image: url('../images/ico/volume_offline.png') !important;
+}
+
+.dump_menu {
+	background-size: 16px !important;
+    background-image: url('../images/ico/dump_rest.png') !important;
+}
+
+
 
 #image-link {
 	-webkit-transform: scale(1);
