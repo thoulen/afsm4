@@ -458,15 +458,23 @@ Ext.define('Ext.cell.volumesGrid', {
 		
 		this.getSelectionModel().on('selectionchange', function (sm, selectedRecord) {
 			//console.log(selectedRecord[0].data);
-			if (selectedRecord[0].data.type != 'RW'){
-				Ext.getCmp('releaseButton').disable();
-				Ext.getCmp('replyButton').disable();
-			}
-			else {
-				Ext.getCmp('releaseButton').enable();
-				Ext.getCmp('replyButton').enable();
+			if (selectedRecord.length > 0){
+				if (selectedRecord[0].data.type != 'RW'){
+					Ext.getCmp('releaseButton').disable();
+					Ext.getCmp('replyButton').disable();
+				}
+				else {
+					Ext.getCmp('releaseButton').enable();
+					Ext.getCmp('replyButton').enable();
+				}
 			}
 		});
+		
+		this.on( 'itemdblclick', function(gridView, record) { // old rowdbclick
+				//Ext.Msg.alert('Demo', 'Double click on '+record.data.name);
+				this.dbClick(record);
+			    
+        });
 
 
         this.callParent(arguments);
@@ -477,6 +485,28 @@ Ext.define('Ext.cell.volumesGrid', {
     getId: function () {
         return this.id;
     },
+	dbClick: function(row){
+		var tableArray = new Array();
+		
+		for (var variabile in row.data) {
+			  tableArray.push({
+                  html: '&nbsp;<b>'+variabile+'</b>&nbsp;'
+              });
+			  tableArray.push({
+                    html: '&nbsp;'+row.data[variabile]+'&nbsp;'
+                });
+		}
+		
+		var dbWin = Ext.create('Ext.Window', {
+	        title: 'Volume Info',
+			layout: {
+			    type: 'table',
+			    columns: 2
+			},
+			items: tableArray
+	    });
+		dbWin.show();
+	},
     diskUsedPB: function (cellValue, css_class, row) {
         var id = Ext.id();
 
