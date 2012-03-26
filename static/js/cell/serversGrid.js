@@ -162,7 +162,7 @@ Ext.define('Ext.cell.serversGrid', {
 	},
  	serversSearch: function () {
         Ext.getCmp('Servers').store.setProxy({
-            url: URL_PREFIX + '/rest/log/?filter=' + Ext.getCmp('selectServersField').getSubmitValue() + '&filterValue=' + Ext.getCmp('searchServersField').getSubmitValue(),
+            url: URL_PREFIX + '/rest/server/?filter=' + Ext.getCmp('selectServersField').getSubmitValue() + '&filterValue=' + Ext.getCmp('searchServersField').getSubmitValue(),
             type: 'rest',
             reader: {
                 type: 'json',
@@ -181,7 +181,7 @@ Ext.define('Ext.cell.serversGrid', {
         Ext.getCmp('selectServersField').setValue('log_timestamp');
         Ext.getCmp('searchServersField').reset();
         Ext.getCmp('Servers').store.setProxy({
-            url: URL_PREFIX + '/rest/log/',
+            url: URL_PREFIX + '/rest/server/',
             type: 'rest',
             reader: {
                 type: 'json',

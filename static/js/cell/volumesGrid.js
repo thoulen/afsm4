@@ -590,7 +590,7 @@ Ext.define('Ext.cell.volumesGrid', {
     },
     volumesSearch: function () {
         Ext.getCmp('Volumes').store.setProxy({
-            url: URL_PREFIX + '/rest/log/?filter=' + Ext.getCmp('selectVolumesField').getSubmitValue() + '&filterValue=' + Ext.getCmp('searchVolumesField').getSubmitValue(),
+            url: URL_PREFIX + '/rest/volume/?filter=' + Ext.getCmp('selectVolumesField').getSubmitValue() + '&filterValue=' + Ext.getCmp('searchVolumesField').getSubmitValue(),
             type: 'rest',
             reader: {
                 type: 'json',
@@ -609,7 +609,7 @@ Ext.define('Ext.cell.volumesGrid', {
         Ext.getCmp('selectVolumesField').setValue('log_timestamp');
         Ext.getCmp('searchVolumesField').reset();
         Ext.getCmp('Volumes').store.setProxy({
-            url: URL_PREFIX + '/rest/log/',
+            url: URL_PREFIX + '/rest/volume/',
             type: 'rest',
             reader: {
                 type: 'json',

@@ -150,7 +150,7 @@ Ext.define('Ext.cell.cellsGrid', {
 	},
  	cellsSearch: function () {
         Ext.getCmp('Cells').store.setProxy({
-            url: URL_PREFIX + '/rest/log/?filter=' + Ext.getCmp('selectCellsField').getSubmitValue() + '&filterValue=' + Ext.getCmp('searchCellsField').getSubmitValue(),
+            url: URL_PREFIX + '/rest/cell/?filter=' + Ext.getCmp('selectCellsField').getSubmitValue() + '&filterValue=' + Ext.getCmp('searchCellsField').getSubmitValue(),
             type: 'rest',
             reader: {
                 type: 'json',
@@ -169,7 +169,7 @@ Ext.define('Ext.cell.cellsGrid', {
         Ext.getCmp('selectCellsField').setValue('log_timestamp');
         Ext.getCmp('searchCellsField').reset();
         Ext.getCmp('Cells').store.setProxy({
-            url: URL_PREFIX + '/rest/log/',
+            url: URL_PREFIX + '/rest/cell/',
             type: 'rest',
             reader: {
                 type: 'json',

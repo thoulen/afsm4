@@ -155,7 +155,7 @@ Ext.define('Ext.cell.partitionsGrid', {
 	},
  	partitionsSearch: function () {
         Ext.getCmp('Partitions').store.setProxy({
-            url: URL_PREFIX + '/rest/log/?filter=' + Ext.getCmp('selectPartitionsField').getSubmitValue() + '&filterValue=' + Ext.getCmp('searchPartitionsField').getSubmitValue(),
+            url: URL_PREFIX + '/rest/partition/?filter=' + Ext.getCmp('selectPartitionsField').getSubmitValue() + '&filterValue=' + Ext.getCmp('searchPartitionsField').getSubmitValue(),
             type: 'rest',
             reader: {
                 type: 'json',
@@ -174,7 +174,7 @@ Ext.define('Ext.cell.partitionsGrid', {
         Ext.getCmp('selectPartitionsField').setValue('log_timestamp');
         Ext.getCmp('searchPartitionsField').reset();
         Ext.getCmp('Partitions').store.setProxy({
-            url: URL_PREFIX + '/rest/log/',
+            url: URL_PREFIX + '/rest/partition/',
             type: 'rest',
             reader: {
                 type: 'json',
