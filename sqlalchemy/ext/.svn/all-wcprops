@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/mys3/!svn/ver/44/src/sqlalchemy/ext
+END
+mutable.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/mys3/!svn/ver/44/src/sqlalchemy/ext/mutable.py
+END
+sqlsoup.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/mys3/!svn/ver/44/src/sqlalchemy/ext/sqlsoup.py
+END
+horizontal_shard.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/mys3/!svn/ver/44/src/sqlalchemy/ext/horizontal_shard.py
+END
+serializer.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/mys3/!svn/ver/44/src/sqlalchemy/ext/serializer.py
+END
+orderinglist.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/mys3/!svn/ver/44/src/sqlalchemy/ext/orderinglist.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/mys3/!svn/ver/44/src/sqlalchemy/ext/__init__.py
+END
+compiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/mys3/!svn/ver/44/src/sqlalchemy/ext/compiler.py
+END
+associationproxy.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/mys3/!svn/ver/44/src/sqlalchemy/ext/associationproxy.py
+END
+hybrid.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/mys3/!svn/ver/44/src/sqlalchemy/ext/hybrid.py
+END
+declarative.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/mys3/!svn/ver/44/src/sqlalchemy/ext/declarative.py
+END

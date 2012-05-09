@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/oracle
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/oracle/base.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/oracle/__init__.py
+END
+zxjdbc.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/oracle/zxjdbc.py
+END
+cx_oracle.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/oracle/cx_oracle.py
+END

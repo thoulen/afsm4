@@ -3,7 +3,7 @@ import tornado.web
 import logging, sys, os, time , fnmatch, traceback
 from afs.model.QueryCache import QueryCache
 from afsm.controller.BaseHandler import BaseHandler
-from afs.service.VolService      import VolService
+
 
 
 
@@ -22,16 +22,17 @@ class VolumeHandler(BaseHandler):
         query.offset  = self.get_argument('start', 0)
             
         # SORT
-        sort = self.get_argument('sort', "[{'property':'schedule', 'direction':'ASC'}]")
+        sort = self.get_argument('sort', "[{'property':'name', 'direction':'ASC'}]")
         
         evsort = eval(sort)
-        lsort = evsort[0]
-        query.order = lsort['property']
+
+        query.sort.append(evsort[0]['property'])
        
-        dir = lsort['direction']
-        query.dir = dir.lower()
+        query.dir = evsort[0]['direction']
         
-        volMng = VolService()
+        print query.sort
+        
+        volMng = self.application.volumeSrv
             
         count = volMng.getVolCountByQuery(query)
         res   = volMng.getVolByQuery(query)

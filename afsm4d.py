@@ -13,10 +13,14 @@ import tornado.httpserver
 import tornado.options
 import tornado.web
 import tornado.ioloop
-from afs.service.AuthService import TokenService
+
+from afs.util.AfsConfig import  setupDefaultConfig
+from afs.service.CellService import CellService
+
 from afs.util.AfsConfig import AfsConfig, setupDefaultConfig
 from afsm.controller.BaseHandler import BaseHandler
 from afsm.controller.VolumeHandler import VolumeHandler
+from afs.service.VolService      import VolService
 
 from   tornado.options import define, options
 
@@ -46,8 +50,7 @@ class AfsmApplication(tornado.web.Application):
      
         # init and configuration
         setupDefaultConfig()
-        authMng =  TokenService()
-        token = authMng.get_artificial_Token('foo','ipp-garching.mpg.de')
+        self.volumeSrv = VolService()
         
         tornado.web.Application.__init__(self, handlers, **settings)
  

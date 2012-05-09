@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/repos/mys3/!svn/ver/44/src/sqlalchemy
+END
+log.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/repos/mys3/!svn/ver/44/src/sqlalchemy/log.py
+END
+schema.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/repos/mys3/!svn/ver/44/src/sqlalchemy/schema.py
+END
+processors.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/mys3/!svn/ver/44/src/sqlalchemy/processors.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/mys3/!svn/ver/44/src/sqlalchemy/__init__.py
+END
+exc.py
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/repos/mys3/!svn/ver/44/src/sqlalchemy/exc.py
+END
+pool.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/repos/mys3/!svn/ver/44/src/sqlalchemy/pool.py
+END
+event.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/repos/mys3/!svn/ver/44/src/sqlalchemy/event.py
+END
+interfaces.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/mys3/!svn/ver/44/src/sqlalchemy/interfaces.py
+END
+types.py
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/repos/mys3/!svn/ver/44/src/sqlalchemy/types.py
+END
+events.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/repos/mys3/!svn/ver/44/src/sqlalchemy/events.py
+END

@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm
+END
+attributes.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/attributes.py
+END
+session.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/session.py
+END
+collections.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/collections.py
+END
+properties.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/properties.py
+END
+scoping.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/scoping.py
+END
+strategies.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/strategies.py
+END
+state.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/state.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/__init__.py
+END
+exc.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/exc.py
+END
+evaluator.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/evaluator.py
+END
+instrumentation.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/instrumentation.py
+END
+unitofwork.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/unitofwork.py
+END
+dependency.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/dependency.py
+END
+query.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/query.py
+END
+deprecated_interfaces.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/deprecated_interfaces.py
+END
+util.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/util.py
+END
+mapper.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/mapper.py
+END
+descriptor_props.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/descriptor_props.py
+END
+dynamic.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/dynamic.py
+END
+identity.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/identity.py
+END
+shard.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/shard.py
+END
+sync.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/sync.py
+END
+interfaces.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/interfaces.py
+END
+events.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/mys3/!svn/ver/44/src/sqlalchemy/orm/events.py
+END

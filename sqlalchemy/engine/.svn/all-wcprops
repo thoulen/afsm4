@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/repos/mys3/!svn/ver/44/src/sqlalchemy/engine
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/mys3/!svn/ver/44/src/sqlalchemy/engine/base.py
+END
+strategies.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/mys3/!svn/ver/44/src/sqlalchemy/engine/strategies.py
+END
+threadlocal.py
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/repos/mys3/!svn/ver/44/src/sqlalchemy/engine/threadlocal.py
+END
+default.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/mys3/!svn/ver/44/src/sqlalchemy/engine/default.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/repos/mys3/!svn/ver/44/src/sqlalchemy/engine/__init__.py
+END
+url.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/mys3/!svn/ver/44/src/sqlalchemy/engine/url.py
+END
+ddl.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/mys3/!svn/ver/44/src/sqlalchemy/engine/ddl.py
+END
+reflection.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/mys3/!svn/ver/44/src/sqlalchemy/engine/reflection.py
+END

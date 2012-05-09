@@ -28,7 +28,7 @@ Ext.define('Ext.cell.volumesGrid', {
                 }, {
                     name: 'name'
                 }, {
-                    name: 'serv'
+                    name: 'servername'
                 }, {
                     name: 'part'
                 }, {
@@ -121,7 +121,7 @@ Ext.define('Ext.cell.volumesGrid', {
                 flex: 2
             }, {
                 text: 'Server',
-                dataIndex: 'serv',
+                dataIndex: 'servername',
                 sortable: true,
                 flex: 2
             }, {
@@ -207,14 +207,19 @@ Ext.define('Ext.cell.volumesGrid', {
                 text: 'diskused',
                 dataIndex: 'diskused',
                 sortable: true,
-                flex: 2,
-                renderer: this.diskUsedPB
+                flex: 1,
             }, {
                 text: 'maxquota',
                 dataIndex: 'maxquota',
                 sortable: true,
                 flex: 1
             }, {
+                text: '% usage',
+                dataIndex: 'diskused',
+                sortable: true,
+                flex: 2,
+                renderer: this.diskUsedPB
+            },  {
                 text: 'minquota',
                 dataIndex: 'minquota',
                 sortable: true,
@@ -358,7 +363,7 @@ Ext.define('Ext.cell.volumesGrid', {
 					        store: Ext.create('Ext.data.Store', {
 					            model: 'comboBoxModel',
 					            data: [{
-					                'id': 'serv',
+					                'id': 'servername',
 					                'name': 'Server'
 					            }, {
 					                'id': 'name',
@@ -511,7 +516,16 @@ Ext.define('Ext.cell.volumesGrid', {
         var id = Ext.id();
 
         Ext.Function.defer(function () {
-            var percentage = Ext.util.Format.round(((cellValue * 100) / row.data['maxquota']), 3);
+        	var percentage = 0;
+          
+            if (row.data['maxquota'] > 0) {
+        	   percentage = Ext.util.Format.round(((cellValue * 100) / row.data['maxquota']), 3);
+            }
+            
+            if (percentage > 100 ) {
+            	percentage = 101
+            }
+            
             var pBar = Ext.create('Ext.ProgressBar', {
                 renderTo: id
             });
@@ -676,7 +690,7 @@ Ext.define('Ext.cell.volumesGrid', {
 
         var vaddSrvCombo = Ext.create('Ext.form.field.ComboBox', {
             fieldLabel: 'Server',
-            name: 'serv',
+            name: 'servername',
             id: 'vadd-serverCombo' + vadd_id,
             store: Ext.create('Ext.data.Store', {
                 model: 'comboBoxModel',
@@ -1056,7 +1070,7 @@ Ext.define('Ext.cell.volumesGrid', {
 
         var vmoveSrvCombo = Ext.create('Ext.form.field.ComboBox', {
             fieldLabel: 'Server',
-            name: 'serv',
+            name: 'servername',
             id: 'vmove-serverCombo' + vmove_id,
             store: Ext.create('Ext.data.Store', {
                 model: 'comboBoxModel',
@@ -1080,7 +1094,7 @@ Ext.define('Ext.cell.volumesGrid', {
             selectOnFocus: true,
             forceSelection: true,
             editable: false,
-            value: row.data['serv'],
+            value: row.data['servername'],
             listeners: {
                 change: function () {
                     vmovePartCombo.clearValue();

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mssql
+END
+information_schema.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mssql/information_schema.py
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mssql/base.py
+END
+mxodbc.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mssql/mxodbc.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mssql/__init__.py
+END
+adodbapi.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mssql/adodbapi.py
+END
+pymssql.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mssql/pymssql.py
+END
+pyodbc.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mssql/pyodbc.py
+END
+zxjdbc.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mssql/zxjdbc.py
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/repos/mys3/!svn/ver/44/src/sqlalchemy/util
+END
+langhelpers.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/mys3/!svn/ver/44/src/sqlalchemy/util/langhelpers.py
+END
+_collections.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/mys3/!svn/ver/44/src/sqlalchemy/util/_collections.py
+END
+compat.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/mys3/!svn/ver/44/src/sqlalchemy/util/compat.py
+END
+queue.py
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/repos/mys3/!svn/ver/44/src/sqlalchemy/util/queue.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/mys3/!svn/ver/44/src/sqlalchemy/util/__init__.py
+END
+topological.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/mys3/!svn/ver/44/src/sqlalchemy/util/topological.py
+END
+deprecations.py
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/repos/mys3/!svn/ver/44/src/sqlalchemy/util/deprecations.py
+END

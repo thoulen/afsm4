@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/sqlite
+END
+pysqlite.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/sqlite/pysqlite.py
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/sqlite/base.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/sqlite/__init__.py
+END

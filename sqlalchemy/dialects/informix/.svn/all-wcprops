@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/informix
+END
+informixdb.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/informix/informixdb.py
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/informix/base.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/informix/__init__.py
+END

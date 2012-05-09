@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/postgresql
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/postgresql/base.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/postgresql/__init__.py
+END
+pg8000.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/postgresql/pg8000.py
+END
+pypostgresql.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/postgresql/pypostgresql.py
+END
+zxjdbc.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/postgresql/zxjdbc.py
+END
+psycopg2.py
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/postgresql/psycopg2.py
+END

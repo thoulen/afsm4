@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/maxdb
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/maxdb/base.py
+END
+sapdb.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/maxdb/sapdb.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/maxdb/__init__.py
+END

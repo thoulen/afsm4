@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/repos/mys3/!svn/ver/44/src/sqlalchemy/sql
+END
+visitors.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/mys3/!svn/ver/44/src/sqlalchemy/sql/visitors.py
+END
+util.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/repos/mys3/!svn/ver/44/src/sqlalchemy/sql/util.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/mys3/!svn/ver/44/src/sqlalchemy/sql/__init__.py
+END
+compiler.py
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/repos/mys3/!svn/ver/44/src/sqlalchemy/sql/compiler.py
+END
+operators.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/mys3/!svn/ver/44/src/sqlalchemy/sql/operators.py
+END
+functions.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/mys3/!svn/ver/44/src/sqlalchemy/sql/functions.py
+END
+expression.py
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/repos/mys3/!svn/ver/44/src/sqlalchemy/sql/expression.py
+END

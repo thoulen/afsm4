@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mysql
+END
+oursql.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mysql/oursql.py
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mysql/base.py
+END
+mysqldb.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mysql/mysqldb.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mysql/__init__.py
+END
+pyodbc.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mysql/pyodbc.py
+END
+mysqlconnector.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mysql/mysqlconnector.py
+END
+pymysql.py
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mysql/pymysql.py
+END
+zxjdbc.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/mysql/zxjdbc.py
+END

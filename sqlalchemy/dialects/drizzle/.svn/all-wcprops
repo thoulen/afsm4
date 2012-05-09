@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/drizzle
+END
+base.py
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/drizzle/base.py
+END
+mysqldb.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/drizzle/mysqldb.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/repos/mys3/!svn/ver/44/src/sqlalchemy/dialects/drizzle/__init__.py
+END
